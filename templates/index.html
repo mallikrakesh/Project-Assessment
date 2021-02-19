@@ -1,0 +1,40 @@
+<a href="{% url 'viewall' %}">View Employees</a>
+<form method="post" action="{% url 'save_details' %}">
+{% csrf_token %}
+
+<table align="center" border="2">
+    <tr>
+        <th>Employee Details</th>
+    </tr>
+    <tr>
+        <th>Name:
+            <input type="text"  required name="r1">
+        </th>
+    </tr>
+
+    <tr>
+        <th>Address:
+            <input type="text" required name="r2">
+        </th>
+    </tr>
+
+    <tr>
+        <th>Start Time:
+            <input type="datetime-local"  required name="r3">
+        </th>
+    </tr>
+    <tr>
+        <th>End Time:
+            <input type="datetime-local"  required name="r4">
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <button type="submit">Save</button>
+        </th>
+    </tr>
+</table>
+</form>
+{% for meaasge in meaasges %}
+<h1 style="text-align: center;color: blue"><strong>{{ meaasge }}</strong></h1>
+{% endfor %}
